@@ -1,5 +1,5 @@
 <template>
-  <div id="app-container" :class="'theme-' + currentTheme" @mousemove="onMouseMove" @click="onClick">
+  <div id="app-container" :class="'theme-' + currentTheme" @mousemove="onMouseMove">
     <!-- 鼠标光晕 -->
     <div class="mouse-glow" :style="glowStyle"></div>
 
@@ -202,10 +202,12 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 99999;
-  width: 200px; height: 200px;
+  width: 360px; height: 360px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(103,194,58,0.25) 0%, rgba(103,194,58,0.08) 30%, transparent 60%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 13%, transparent) 0%, transparent 68%);
+  opacity: .75;
+  mix-blend-mode: multiply;
   transition: none;
 }
 </style>
